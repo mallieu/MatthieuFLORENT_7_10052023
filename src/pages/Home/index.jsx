@@ -1,13 +1,20 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import BlocAnnonce from '../../components/ListeLogements';
 
-
-
-function Home() { 
+function Home() {
     return (
-        <div></div>
-    )
+        <>
+            <Banner />
+            <BlocAnnonce />
+        </>
+    );
 }
 
-export default Home
+function Banner() {
+    return (
+        <div className="banner-homepage overlay-radius-l">
+            <h1>Chez vous, partout et ailleurs</h1>
+        </div>
+    );
+}
+
+export default Home;

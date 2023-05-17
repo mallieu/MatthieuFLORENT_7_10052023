@@ -1,0 +1,50 @@
+.banner-homepage {
+    background-image:
+        url('../../assets/images/banner-homepage.jpg');
+    background-size: cover;
+    margin-top: 50px;
+    height: 250px;
+    border-radius: $radius-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: white;
+        z-index: 1;
+    }
+}
+
+
+.overlay {
+    position: relative;
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay-radius-s {
+    @extend .overlay;
+
+    &::before {
+        @extend ::before;
+        border-radius: $radius-s;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+}
+
+.overlay-radius-l {
+    @extend .overlay;
+
+    &::before {
+        @extend ::before;
+        border-radius: $radius-l;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}

@@ -1,0 +1,23 @@
+/* Barre du menu avec logo */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-height: 70px;
+
+    & img {
+        max-height: 70px;
+    }
+
+    & ul {
+        list-style: none;
+        display: flex;
+        gap: 50px;
+
+        & a {
+            color: $couleur--principale;
+            text-decoration: none;
+        }
+    }
+}

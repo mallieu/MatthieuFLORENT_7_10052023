@@ -1,0 +1,43 @@
+/* Barre du menu avec logo */
+.container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    height: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: $couleur--gris-clair;
+}
+
+.brique-logement {
+    background: $couleur--principale;
+    border-radius: $radius-s;
+    margin: 2%;
+    width: calc(33.33% - 4%);
+    position: relative;
+    background-size: cover;
+
+    // Permet de gérer la forme carrée des briques 
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    h2 {
+        position: absolute;
+        left: 5.88%;
+        right: 5.88%;
+        top: 78.82%;
+        bottom: 5.88%;
+        color: white;
+        font-size: map-get($taille-texte, texte);
+    }
+}
+
+.clickable-div {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+}

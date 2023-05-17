@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-function Error() {
-    return <div>ERREUR</div>;
+function Propos() {
+    return <div>A PROPOS</div>;
 }
 
-export default Error;
+export default Propos;

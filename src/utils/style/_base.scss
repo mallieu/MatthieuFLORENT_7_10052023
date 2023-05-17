@@ -1,0 +1,33 @@
+/* Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément */
+.flex {
+    display: flex;
+
+    &__centrage {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__justify-content--center {
+        justify-content: center;
+    }
+
+    &__align-items--center {
+        align-items: center;
+    }
+
+    &__colonne {
+        flex-direction: column;
+    }
+
+    &__row {
+        flex-direction: row;
+    }
+
+    &__space-between {
+        justify-content: space-between;
+    }
+
+    &__end {
+        justify-content: end;
+    }
+}

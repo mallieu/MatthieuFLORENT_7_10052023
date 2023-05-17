@@ -1,12 +1,20 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import './index.scss'
+import logo from '../../assets/images/logo.png';
 
-function Header() { 
+function Header() {
     return (
-        <div></div>
-    )
+        <nav className="header">
+            <img src={logo} alt="logo-kasa" />
+
+            <ul className="menu-links">
+                <li>
+                    <a href="/">Accueil</a>
+                </li>
+                <li>
+                    <a href="/a-propos">A propos</a>
+                </li>
+            </ul>
+        </nav>
+    );
 }
 
-export default Header
+export default Header;
