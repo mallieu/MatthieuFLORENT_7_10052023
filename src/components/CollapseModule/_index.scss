@@ -1,0 +1,17 @@
+.collapseModule {
+    &__title {
+        max-width: 100%;
+        padding: 10px 15px;
+        background-color: $couleur--principale;
+        border-radius: $radius-s;
+        color: white;
+        font-weight: map-get($graisse-texte, light);
+    }
+
+    &__content {
+        padding: 10px;
+        background-color: $couleur--gris-clair;
+        border-radius: $radius-s;
+
+    }
+}

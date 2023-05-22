@@ -1,12 +1,12 @@
 /** Permet de gérer les mediaqueries avec les variables issues de "Breakpoints" **/
 @mixin mediaqueries-min($width) {
-    @media only screen and (min-width: $width) {
+    @media only screen and (min-width: ($width + 1)) {
         @content;
     }
 }
 
 @mixin mediaqueries-max($width) {
-    @media only screen and (max-width: $width) {
+    @media only screen and (max-width: ($width - 1)) {
         @content;
     }
 }
@@ -15,10 +15,4 @@
     @media only screen and (min-width: $min) and (max-width: $max) {
         @content;
     }
-}
-
-@mixin vertical-list {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }

@@ -1,5 +1,5 @@
 /* Barre du menu avec logo */
-.container {
+.container__card-appartment {
     display: flex;
     align-items: center;
     margin-top: 30px;
@@ -7,15 +7,31 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: $couleur--gris-clair;
+
+    @include mediaqueries-max($phone) {
+        background-color: white;
+    }
+
 }
 
-.brique-logement {
+.card-appartment {
     background: $couleur--principale;
     border-radius: $radius-s;
-    margin: 2%;
+    margin: 3% 0 0;
     width: calc(33.33% - 4%);
     position: relative;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    @include mediaqueries-max($laptop) {
+        width: calc(50% - 4%);
+        max-height: 40vh;
+    }
+
+    @include mediaqueries-max($phone) {
+        width: 100%;
+    }
 
     // Permet de gérer la forme carrée des briques 
     &::after {
@@ -26,18 +42,12 @@
 
     h2 {
         position: absolute;
-        left: 5.88%;
-        right: 5.88%;
-        top: 78.82%;
-        bottom: 5.88%;
+        left: 5%;
+        top: 75%;
+        width: 60%;
+        text-overflow: ellipsis;
+        height: 100px;
         color: white;
         font-size: map-get($taille-texte, texte);
     }
-}
-
-.clickable-div {
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    position: absolute;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import FicheLogement from './pages/Fiche-Logement';
+import FicheLogement from './pages/FicheLogement';
 import APropos from './pages/APropos';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -18,7 +18,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route
-                    path="/fiche-logement/:logementNumber"
+                    path="/fiche-logement/:appartmentId"
                     element={<FicheLogement />}
                 />
                 <Route path="/a-propos" element={<APropos />} />
