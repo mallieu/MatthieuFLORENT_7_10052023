@@ -2,9 +2,10 @@
 @import "./mixins";
 @import "./base";
 @import "./typography";
-@import "../../components/Footer/Footer";
 @import "../../components/Menu/Menu";
+@import "../../components/Footer/Footer";
 @import "../../components/Banners/Banners";
+@import "../../pages/FicheLogement/FicheLogement";
+@import "../../pages/A-Propos/A-Propos";
 @import "../../components/CardsLogements/CardsLogements";
 @import "../../components/CollapseModule/CollapseModule";
-@import "../../pages/FicheLogement/FicheLogement";

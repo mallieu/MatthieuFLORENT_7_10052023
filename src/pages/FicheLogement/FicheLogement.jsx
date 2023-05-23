@@ -1,7 +1,9 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import useAPICall from '../../assets/API/API';
 import CollapseModule from '../../components/CollapseModule/CollapseModule';
-import { MapList } from '../../components/Helpers';
+import { MapList } from '../../components/Helpers/Helpers';
+import Banner from '../../components/Banners/Banner';
 import { RatingStar } from '../../assets/images/Rating-star-icon';
 
 const FicheLogement = () => {
@@ -26,17 +28,28 @@ const FicheLogement = () => {
 };
 
 const AppartmentDatas = ({ appartment }) => {
+    const collapseModules = [
+        {
+            title: 'Description',
+            content: appartment.description,
+        },
+        {
+            title: 'Équipements',
+            content: <MapList data={appartment.equipments} />,
+        },
+    ];
     return (
         <>
-            <div
+            <Banner
                 className="banner--ficheLogement"
-                style={{ backgroundImage: `url(${appartment.cover})` }}
-            ></div>
+                HasBackgroundImage={appartment.cover}
+            />
+
             <div className="container">
                 <div className="flex__Column infosLogement">
                     <h1>{appartment.title}</h1>
                     <h2>{appartment.location}</h2>
-                    <MapList data={appartment.tags} li_Class="tags" />
+                    <MapList data={appartment.tags} component_Class="tags" />
                 </div>
 
                 <div className="flex__Column infosHost">
@@ -44,20 +57,16 @@ const AppartmentDatas = ({ appartment }) => {
                     <HostRating rating={appartment.rating} />
                 </div>
             </div>
-            <div className="container__collapseModules">
-                <div className="column__collapseModule">
-                    <CollapseModule
-                        title="Description"
-                        content={appartment.description}
-                    />
-                </div>
-                <div className="column__collapseModule">
-                    <CollapseModule
-                        title="Équipements"
-                        content={<MapList data={appartment.equipments} />}
-                    />
-                </div>
-            </div>
+            <MapList
+                data={collapseModules}
+                container_Class="container__collapseModules"
+                component_Class="column__collapseModule"
+                isDiv={true}
+                isComponent={true}
+                component={({ data }) => (
+                    <CollapseModule title={data.title} content={data.content} />
+                )}
+            />
         </>
     );
 };
@@ -84,15 +93,13 @@ const HostRating = ({ rating }) => {
             : 'infosHost__rating--noColor';
     };
 
+    const ratingStars = Array.from({ length: 5 }, (_, index) => (
+        <RatingStar key={index} className={getRatingColor(index)} />
+    ));
+
     return (
         <>
-            <div className="infosHost__rating">
-                <RatingStar className={getRatingColor(0)} />
-                <RatingStar className={getRatingColor(1)} />
-                <RatingStar className={getRatingColor(2)} />
-                <RatingStar className={getRatingColor(3)} />
-                <RatingStar className={getRatingColor(4)} />
-            </div>
+            <div className="infosHost__rating">{ratingStars}</div>
         </>
     );
 };

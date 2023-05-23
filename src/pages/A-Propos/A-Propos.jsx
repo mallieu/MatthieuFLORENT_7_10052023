@@ -1,26 +1,27 @@
 import Banner from '../../components/Banners/Banner';
 import CollapseModule from '../../components/CollapseModule/CollapseModule';
-import { MapList } from '../../components/Helpers';
+import { MapList } from '../../components/Helpers/Helpers';
 
-const Home = () => {
+const APropos = () => {
     return (
         <>
-            <Banner className="banner--250px overlay-banner" />
+            <Banner className="banner__250px banner--APropos overlay-banner" />
 
-            <div className="column__collapseModule">
-                {CollapseModuleContent.map((module, index) => (
-                    <CollapseModule
-                        key={index}
-                        title={module.title}
-                        content={module.content}
-                    />
-                ))}
-            </div>
+            <MapList
+                data={CollapseModuleContent}
+                container_Class="container__collapseModules--alt"
+                component_Class="column__collapseModule--alt"
+                isDiv={true}
+                isComponent={true}
+                component={({ data }) => (
+                    <CollapseModule title={data.title} content={data.content} />
+                )}
+            />
         </>
     );
 };
 
-export default Home;
+export default APropos;
 
 const CollapseModuleContent = [
     {

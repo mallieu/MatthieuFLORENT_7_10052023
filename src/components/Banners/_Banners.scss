@@ -4,10 +4,8 @@
     margin-top: $margin-xl;
     border-radius: $radius-l;
 
-    &--250px {
+    &__250px {
         @extend .banner;
-        background-image:
-            url('../../assets/images/banner-homepage.jpg');
 
         height: 250px;
         display: flex;
@@ -20,6 +18,16 @@
             z-index: 1;
             padding: 0 20px;
         }
+    }
+
+    &--homepage {
+        background-image:
+            url('../../assets/images/banner-homepage.jpg');
+    }
+
+    &--APropos {
+        background-image:
+            url('../../assets/images/banner-a-propos.jpg');
     }
 
     &--ficheLogement {

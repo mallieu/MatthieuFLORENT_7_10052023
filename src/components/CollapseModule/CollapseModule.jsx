@@ -9,7 +9,7 @@ const CollapseModule = ({ title, content }) => {
     }
     return (
         <>
-            <div className="collapseModule">
+            <div key={title} className="collapseModule">
                 <div className="collapseModule__titleBanner">
                     <h4>{title}</h4>
                     <ChevronToggle
@@ -27,14 +27,3 @@ const CollapseModule = ({ title, content }) => {
 };
 
 export default CollapseModule;
-
-// {stateModule && (
-//     <div
-//         className={`collapseModule__content
-//         ${
-//             stateModule
-//                 ? 'collapseModule__content--collapsed'
-//                 : 'collapseModule__content--uncollapsed'
-//         }
-//          `}
-//     >
