@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import useAPICall from '../../assets/API/index';
-import CollapseModule from '../../components/CollapseModule/index';
+import useAPICall from '../../assets/API/API';
+import CollapseModule from '../../components/CollapseModule/CollapseModule';
 import { MapList } from '../../components/Helpers';
 import { RatingStar } from '../../assets/images/Rating-star-icon';
 
@@ -13,7 +13,6 @@ const FicheLogement = () => {
 
     return (
         <div>
-            <div>FICHE LOGEMENT {appartmentId}</div>
             {thisAppartment && (
                 <>
                     <AppartmentDatas
@@ -33,17 +32,15 @@ const AppartmentDatas = ({ appartment }) => {
                 className="banner--ficheLogement"
                 style={{ backgroundImage: `url(${appartment.cover})` }}
             ></div>
-            <div className="flex__AlignContent--Center">
+            <div className="container">
                 <div className="flex__Column infosLogement">
-                    <h2>{appartment.title}</h2>
-                    <h4>{appartment.location}</h4>
+                    <h1>{appartment.title}</h1>
+                    <h2>{appartment.location}</h2>
                     <MapList data={appartment.tags} li_Class="tags" />
                 </div>
 
                 <div className="flex__Column infosHost">
-                    <div className="flex__AlignContent--Center flex__JustifyContent--Flex-End">
-                        <HostProfile appartment={appartment} />
-                    </div>
+                    <HostProfile appartment={appartment} />
                     <HostRating rating={appartment.rating} />
                 </div>
             </div>
@@ -57,12 +54,7 @@ const AppartmentDatas = ({ appartment }) => {
                 <div className="column__collapseModule">
                     <CollapseModule
                         title="Équipements"
-                        content={
-                            <MapList
-                                data={appartment.equipments}
-                                li_Class="tags"
-                            />
-                        }
+                        content={<MapList data={appartment.equipments} />}
                     />
                 </div>
             </div>
@@ -74,11 +66,13 @@ const HostProfile = ({ appartment }) => {
     const host = appartment.host;
     return (
         <>
-            <div className="infosHost__name">{host.name}</div>
-            <div
-                className="infosHost__picture"
-                style={{ backgroundImage: `url(${host.picture})` }}
-            ></div>
+            <div className="infosHost__container">
+                <div className="infosHost__name">{host.name}</div>
+                <div
+                    className="infosHost__picture"
+                    style={{ backgroundImage: `url(${host.picture})` }}
+                ></div>
+            </div>
         </>
     );
 };

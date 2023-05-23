@@ -1,4 +1,4 @@
-import useAPICall from '../../assets/API/index';
+import useAPICall from '../../assets/API/API';
 
 function ListeAnnonces() {
     const data = useAPICall('/data.json');
@@ -9,7 +9,7 @@ function ListeAnnonces() {
                 {data.map((item) => (
                     <div
                         key={item.id}
-                        className="card-appartment overlay-radius-s"
+                        className="card-appartment overlay-cards"
                         style={{ backgroundImage: `url(${item.cover})` }}
                     >
                         <a

@@ -1,0 +1,148 @@
+.container {
+    margin-top: $margin-m;
+    display: flex;
+    justify-content: space-between;
+
+    @include mediaqueries-max($tablet) {
+        flex-wrap: wrap;
+        margin-bottom: $margin-l;
+    }
+}
+
+.infosLogement {
+    width: 60%;
+    justify-content: center;
+    max-height: 100%;
+
+    @include mediaqueries-max($tablet) {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: map-get($taille-texte, xl);
+        margin: $margin-s 0;
+    }
+
+    h2 {
+        font-size: map-get($taille-texte, m);
+        margin: 0 0 $margin-s;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-top: $margin-m;
+        font-size: map-get($taille-texte, m);
+
+        .tags {
+            background-color: $couleur--principale;
+            border-radius: $radius-s;
+            color: white;
+            display: inline-block;
+            padding: 5px 40px;
+            margin-right: $margin-m;
+            margin-bottom: $margin-s;
+        }
+
+
+    }
+}
+
+.infosHost {
+    justify-content: center;
+    width: 40%;
+
+    @include mediaqueries-max($tablet) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    @include mediaqueries-max($small) {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include mediaqueries-max($small) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__picture {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 100%;
+        height: 60px;
+        width: 60px;
+        margin-left: $margin-m;
+
+        @include mediaqueries-max($small) {
+            margin-left: 0;
+        }
+    }
+
+    &__name {
+        text-align: right;
+        width: 30%;
+        font-size: map-get($taille-texte, m);
+
+        @include mediaqueries-max($tablet) {
+            width: 50%;
+        }
+
+        @include mediaqueries-max($small) {
+            text-align: left;
+            margin-left: $margin-m;
+        }
+    }
+
+    &__rating {
+        display: flex;
+        justify-content: flex-end;
+        gap: $margin-s;
+        margin-top: $margin-s;
+
+        @include mediaqueries-max($small) {
+            justify-content: flex-start;
+            margin-bottom: $margin-m;
+        }
+
+        svg {
+            height: 30px;
+        }
+
+        &--colorized {
+            fill: $couleur--principale;
+        }
+
+        &--noColor {
+            fill: $couleur--gris-clair;
+        }
+    }
+}
+
+.container__collapseModules {
+    display: flex;
+    gap: 100px;
+
+    @include mediaqueries-max($tablet) {
+        gap: 0;
+        flex-wrap: wrap;
+    }
+}
+
+.column__collapseModule {
+    width: 50%;
+    margin-bottom: $margin-xl;
+
+    @include mediaqueries-max($tablet) {
+        width: 100%;
+        margin-bottom: $margin-l;
+    }
+}

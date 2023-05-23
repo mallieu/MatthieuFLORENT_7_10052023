@@ -1,9 +1,10 @@
 .banner {
+    background-position: center;
     background-size: cover;
-    margin-top: 50px;
+    margin-top: $margin-xl;
     border-radius: $radius-l;
 
-    &--homepage {
+    &--250px {
         @extend .banner;
         background-image:
             url('../../assets/images/banner-homepage.jpg');
@@ -13,16 +14,23 @@
         align-items: center;
         justify-content: center;
 
-
         h1 {
+            text-align: center;
             color: white;
             z-index: 1;
+            padding: 0 20px;
         }
     }
 
     &--ficheLogement {
         @extend .banner;
+        min-height: 415px;
         height: 50vh;
+
+        @include mediaqueries-max($tablet) {
+            min-height: 255px;
+            height: 33vh;
+        }
     }
 }
 
@@ -39,7 +47,7 @@
     bottom: 0;
 }
 
-.overlay-radius-s {
+.overlay-cards {
     @extend .overlay;
 
     &::before {
@@ -49,7 +57,7 @@
     }
 }
 
-.overlay-radius-l {
+.overlay-banner {
     @extend .overlay;
 
     &::before {

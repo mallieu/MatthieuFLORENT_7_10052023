@@ -2,10 +2,9 @@
 @import "./mixins";
 @import "./base";
 @import "./typography";
-@import "../../components/Error/index";
-@import "../../components/Footer/index";
-@import "../../components/Header/index";
-@import "../../components/Banners/index";
-@import "../../components/CardsLogements/index";
-@import "../../components/CollapseModule/";
-@import "../../pages/FicheLogement/";
+@import "../../components/Footer/Footer";
+@import "../../components/Menu/Menu";
+@import "../../components/Banners/Banners";
+@import "../../components/CardsLogements/CardsLogements";
+@import "../../components/CollapseModule/CollapseModule";
+@import "../../pages/FicheLogement/FicheLogement";

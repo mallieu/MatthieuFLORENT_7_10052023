@@ -1,28 +1,28 @@
 /* Barre du menu avec logo */
 .container__card-appartment {
-    display: flex;
     align-items: center;
-    margin-top: 30px;
+    background-color: $couleur--gris-clair;
+    display: flex;
+    flex-wrap: wrap;
     height: auto;
     justify-content: space-evenly;
-    flex-wrap: wrap;
-    background-color: $couleur--gris-clair;
+    margin-top: 30px;
 
     @include mediaqueries-max($phone) {
         background-color: white;
+        margin-top: 0;
     }
 
 }
 
 .card-appartment {
     background: $couleur--principale;
-    border-radius: $radius-s;
-    margin: 3% 0 0;
-    width: calc(33.33% - 4%);
-    position: relative;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
+    border-radius: $radius-s;
+    margin: $margin-m 0 0;
+    position: relative;
+    width: calc(33.33% - 4%);
+    @extend .flex__Column;
 
     @include mediaqueries-max($laptop) {
         width: calc(50% - 4%);
@@ -44,10 +44,18 @@
         position: absolute;
         left: 5%;
         top: 75%;
-        width: 60%;
-        text-overflow: ellipsis;
+        width: 66%;
         height: 100px;
         color: white;
-        font-size: map-get($taille-texte, texte);
+        font-size: map-get($taille-texte, m);
+
+        @include mediaqueries-between($tablet, $laptop) {
+            top: 70%;
+        }
+
+        @include mediaqueries-between($small, $phone) {
+            font-size: map-get($taille-texte, l);
+            top: 70%;
+        }
     }
 }

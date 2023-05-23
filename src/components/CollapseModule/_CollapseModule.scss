@@ -1,0 +1,47 @@
+.collapseModule {
+    font-size: map-get($taille-texte, m);
+
+    &__titleBanner {
+        align-items: center;
+        background-color: $couleur--principale;
+        border-radius: $radius-s;
+        color: white;
+        display: flex;
+        max-width: 100%;
+        justify-content: space-between;
+        padding: 10px 15px;
+        position: relative;
+        z-index: 1;
+
+        h4 {
+            margin: 0;
+        }
+    }
+
+    &__toggle {
+        height: 20px;
+        fill: white;
+        cursor: pointer;
+    }
+
+    &__content {
+        border-radius: 0 0 $radius-s $radius-s;
+        background-color: $couleur--gris-clair;
+        font-weight: map-get($graisse-texte, light);
+        line-height: map-get($taille-line-height, l);
+        margin-top: -$margin-s;
+        padding: 40px 20px 20px;
+        position: relative;
+
+        @include mediaqueries-max ($tablet) {
+            margin-top: -$margin-m;
+        }
+
+        ul {
+            padding-left: 0;
+            margin: 0;
+            font-size: map-get($taille-texte, m);
+            list-style: none;
+        }
+    }
+}

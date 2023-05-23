@@ -5,20 +5,18 @@ $font-principale: 'Montserrat', sans-serif;
 
 // Liste tailles
 $taille-texte: (
-    legende: 0.875rem,
-    texte: 1.125rem,
-    titre-petit: 1.5rem,
-    titre-moyen: 1.875rem,
-    titre-grand: 2.5rem
+    s: 0.875rem,
+    m: 1.125rem,
+    l: 1.5rem,
+    xl: 2rem,
 );
 
 // Liste line-height
 $taille-line-height: (
-    legende: 0.875rem,
-    texte: 1.125rem,
-    titre-petit: 1.5rem,
-    titre-moyen: 1.875rem,
-    titre-grand: 2.5rem
+    s: 0.875rem,
+    m: 1.125rem,
+    l: 1.5rem,
+    xl: 2rem
 );
 
 // Liste graisses
