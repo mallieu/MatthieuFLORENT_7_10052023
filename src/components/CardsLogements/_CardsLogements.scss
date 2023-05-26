@@ -1,61 +1,62 @@
-/* Barre du menu avec logo */
-.container__card-appartment {
-    align-items: center;
-    background-color: $couleur--gris-clair;
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: space-evenly;
-    margin-top: 30px;
+.CardsLogements {
+    &__container {
+        align-items: center;
+        background-color: $couleur--gris-clair;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-evenly;
+        margin: $margin-l 0;
+        padding-bottom: 30px;
 
-    @include mediaqueries-max($phone) {
-        background-color: white;
-        margin-top: 0;
+        @include mediaqueries-max($phone) {
+            background-color: white;
+            margin-top: 0;
+        }
     }
 
-}
+    &__cardItem {
+        background: $couleur--principale;
+        background-size: cover;
+        border-radius: $radius-s;
+        margin: $margin-m 0 0;
+        position: relative;
+        width: calc(33.33% - 4%); // Gère l'écart
+        @extend .flex__Column;
 
-.card-appartment {
-    background: $couleur--principale;
-    background-size: cover;
-    border-radius: $radius-s;
-    margin: $margin-m 0 0;
-    position: relative;
-    width: calc(33.33% - 4%);
-    @extend .flex__Column;
-
-    @include mediaqueries-max($laptop) {
-        width: calc(50% - 4%);
-        max-height: 40vh;
-    }
-
-    @include mediaqueries-max($phone) {
-        width: 100%;
-    }
-
-    // Permet de gérer la forme carrée des briques 
-    &::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-    }
-
-    h2 {
-        position: absolute;
-        left: 5%;
-        top: 75%;
-        width: 66%;
-        height: 100px;
-        color: white;
-        font-size: map-get($taille-texte, m);
-
-        @include mediaqueries-between($tablet, $laptop) {
-            top: 70%;
+        @include mediaqueries-max($laptop) {
+            width: calc(50% - 4%);
+            max-height: 40vh;
         }
 
-        @include mediaqueries-between($small, $phone) {
-            font-size: map-get($taille-texte, l);
-            top: 70%;
+        @include mediaqueries-max($phone) {
+            width: 100%;
+        }
+
+        // Permet de gérer la forme carrée des briques 
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        h2 {
+            position: absolute;
+            left: 5%;
+            top: 75%;
+            width: 66%;
+            height: 100px;
+            color: white;
+            font-size: map-get($taille-texte, m);
+
+            @include mediaqueries-between($tablet, $laptop) {
+                top: 70%;
+            }
+
+            @include mediaqueries-between($small, $phone) {
+                font-size: map-get($taille-texte, l);
+                top: 70%;
+            }
         }
     }
 }

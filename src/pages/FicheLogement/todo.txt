@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import useAPICall from '../../assets/API/API';
 import { MapList } from '../../components/Helpers/Helpers';
 import CollapseModule from '../../components/CollapseModule/CollapseModule';
@@ -8,12 +8,23 @@ import { RatingStar } from '../../assets/icons/Rating-star-icon';
 import Banner from '../../components/Banners/Banner';
 
 // Identifie l'appartement à afficher
-const FicheLogement = () => {
+const FicheLogement = async () => {
     const data = useAPICall('/data.json');
     const { appartmentId } = useParams();
-    const thisAppartment = data.find(
+    const navigate = useNavigate();
+    const thisAppartment = await data.find(
         (appartment) => appartment.id === appartmentId
     );
+
+    useEffect(() => {
+        const checkId = () => {
+            if (!thisAppartment) {
+                navigate('/page404');
+            }
+        };
+
+        checkId();
+    }, [data, appartmentId, navigate]);
 
     return (
         <div>

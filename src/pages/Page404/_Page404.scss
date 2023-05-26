@@ -1,0 +1,33 @@
+.page404 {
+    &__container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 288px;
+
+        @include mediaqueries-max ($tablet) {
+            font-size: 96px;
+        }
+    }
+
+    &__text {
+        font-size: map-get($taille-texte, xl);
+
+        @include mediaqueries-max ($tablet) {
+            font-size: map-get($taille-texte, m);
+        }
+    }
+
+    &__link {
+        color: $couleur--principale;
+        font-size: map-get($taille-texte, m);
+        margin-top: 10%;
+        text-decoration: underline;
+    }
+}

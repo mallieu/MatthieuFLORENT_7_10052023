@@ -1,18 +1,19 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { ChevronToggle } from '../../assets/images/Chevron-toggle';
+import { ChevronToggle } from '../../assets/icons/Chevron-toggle';
 
 const CollapseModule = ({ title, content }) => {
     const [stateModule, setStateModule] = useState(true);
 
     function CollapseModuleClick() {
-        setStateModule(!stateModule);
+        setStateModule(!stateModule); // Fermé par défaut
     }
     return (
         <>
-            <div key={title} className="collapseModule">
+            <div key={title} className="collapseModule__container">
                 <div className="collapseModule__titleBanner">
                     <h4>{title}</h4>
-                    <ChevronToggle
+                    <ChevronToggle // Apparence variable
                         className="collapseModule__toggle"
                         state={stateModule}
                         onClick={CollapseModuleClick}
@@ -24,6 +25,11 @@ const CollapseModule = ({ title, content }) => {
             </div>
         </>
     );
+};
+
+CollapseModule.propTypes = {
+    title: PropTypes.string,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 export default CollapseModule;

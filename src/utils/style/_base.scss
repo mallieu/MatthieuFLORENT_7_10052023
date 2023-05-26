@@ -1,22 +1,29 @@
+// Déifinit les propriétés globales
+body {
+    color: $couleur--principale;
+    font-family: $font-principale;
+    font-size: map-get($taille-texte, texte);
+    font-weight: map-get($graisse-texte, normal);
+    margin: auto; // Centre le contenu
+    width: 90%; // Réduit la taille du body
+}
+
+/* Gestion typo rem */
+html {
+    font-size: 16px !important;
+}
+
+@include mediaqueries-max($tablet) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+// Permet de donner l'apparence d'une div cliquable
+// A placer autour d'un lien 
 .clickable-div {
     height: 100%;
     width: 100%;
     cursor: pointer;
     position: absolute;
-}
-
-.flex__Column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex__AlignContent--Center {
-    display: flex;
-    align-items: center;
-}
-
-
-.flex__JustifyContent--Flex-End {
-    display: flex;
-    justify-content: flex-end;
 }

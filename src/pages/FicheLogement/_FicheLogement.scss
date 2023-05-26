@@ -1,4 +1,5 @@
-.container {
+// Bloc global
+.infos__container {
     margin-top: $margin-m;
     display: flex;
     justify-content: space-between;
@@ -9,6 +10,7 @@
     }
 }
 
+// Partie gauche
 .infosLogement {
     width: 60%;
     justify-content: center;
@@ -47,6 +49,7 @@
     }
 }
 
+// Partie droite
 .infosHost {
     justify-content: center;
     width: 40%;
@@ -114,9 +117,10 @@
         }
 
         svg {
-            height: 30px;
+            height: 30px; // Définit la hauteur des étoiles
         }
 
+        // Application de la classe selon la note
         &--colorized {
             fill: $couleur--principale;
         }
@@ -127,22 +131,26 @@
     }
 }
 
-.container__collapseModules {
-    display: flex;
-    gap: 100px;
+// Section contenant les collapseModules
+.collapseModules {
+    &__container {
+        display: flex;
+        gap: 100px;
 
-    @include mediaqueries-max($tablet) {
-        gap: 0;
-        flex-wrap: wrap;
+        @include mediaqueries-max($tablet) {
+            gap: 0;
+            flex-wrap: wrap;
+        }
     }
-}
 
-.column__collapseModule {
-    width: 50%;
-    margin-bottom: $margin-xl;
+    &__column {
+        width: 50%;
+        margin-bottom: $margin-xl;
 
-    @include mediaqueries-max($tablet) {
-        width: 100%;
-        margin-bottom: $margin-l;
+        @include mediaqueries-max($tablet) {
+            width: 100%;
+            margin-bottom: $margin-l;
+        }
     }
+
 }

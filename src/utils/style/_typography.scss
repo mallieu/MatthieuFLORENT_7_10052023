@@ -5,7 +5,7 @@ $font-principale: 'Montserrat', sans-serif;
 
 // Liste tailles
 $taille-texte: (
-    s: 0.875rem,
+    s: 0.75rem,
     m: 1.125rem,
     l: 1.5rem,
     xl: 2rem,
@@ -13,7 +13,7 @@ $taille-texte: (
 
 // Liste line-height
 $taille-line-height: (
-    s: 0.875rem,
+    s: 0.75rem,
     m: 1.125rem,
     l: 1.5rem,
     xl: 2rem
@@ -24,24 +24,3 @@ $graisse-texte: (
     light: 400,
     normal: 500
 );
-
-
-/* Gestion typo rem */
-html {
-    font-size: 16px !important;
-}
-
-@include mediaqueries-max($tablet) {
-    html {
-        font-size: 14px !important;
-    }
-}
-
-body {
-    color: $couleur--principale;
-    font-family: $font-principale;
-    font-size: map-get($taille-texte, texte);
-    font-weight: map-get($graisse-texte, normal);
-    margin: auto;
-    width: 90%;
-}

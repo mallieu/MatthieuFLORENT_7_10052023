@@ -1,5 +1,5 @@
-import CardsLogement from '../../components/CardsLogements/CardsLogements';
 import Banner from '../../components/Banners/Banner';
+import CardsLogement from '../../components/CardsLogements/CardsLogements';
 
 const Home = () => (
     <>

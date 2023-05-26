@@ -1,5 +1,7 @@
 .collapseModule {
-    font-size: map-get($taille-texte, m);
+    &__container {
+        font-size: map-get($taille-texte, m);
+    }
 
     &__titleBanner {
         align-items: center;
@@ -8,10 +10,10 @@
         color: white;
         display: flex;
         max-width: 100%;
-        justify-content: space-between;
+        justify-content: space-between; // Positionne le titre et le toggle
         padding: 10px 15px;
         position: relative;
-        z-index: 1;
+        z-index: 1; // Permet au titre d'être par-dessus le contenu
 
         h4 {
             margin: 0;

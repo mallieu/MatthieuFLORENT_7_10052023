@@ -1,4 +1,5 @@
-.container__collapseModules--alt {
+// Collapse module sur toute la largeur
+.collapseModules__container--Full {
     width: 100%;
     padding-top: 30px;
 
@@ -6,9 +7,18 @@
         width: 80%;
         margin: auto;
     }
+
+    .collapseModule {
+
+        &__titleBanner,
+        &__content {
+            font-size: map-get($taille-texte, l);
+        }
+    }
+
 }
 
-.column__collapseModule--alt {
+.collapseModules__column--Full {
     width: 100%;
     margin-bottom: $margin-l;
 

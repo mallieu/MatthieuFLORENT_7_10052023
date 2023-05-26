@@ -1,11 +1,13 @@
 @import "./variables";
 @import "./mixins";
-@import "./base";
 @import "./typography";
+@import "./base";
+@import "./layouts";
 @import "../../components/Menu/Menu";
 @import "../../components/Footer/Footer";
 @import "../../components/Banners/Banners";
 @import "../../pages/FicheLogement/FicheLogement";
 @import "../../pages/A-Propos/A-Propos";
+@import "../../pages/Page404/Page404";
 @import "../../components/CardsLogements/CardsLogements";
 @import "../../components/CollapseModule/CollapseModule";

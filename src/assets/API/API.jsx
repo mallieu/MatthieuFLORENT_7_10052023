@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// Permet de faire appel aux données de l'API
 function useAPICall(url) {
     const [data, setData] = useState([]);
 

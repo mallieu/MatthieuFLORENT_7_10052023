@@ -1,20 +1,16 @@
-import React from 'react';
+import logo from '../../assets/images/logo-white.png';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer
-            style={{ background: 'black', color: 'white', textAlign: 'center' }}
-        >
-            <div>
-                <img
-                    src="/path/to/logo.png"
-                    alt="Logo"
-                    style={{ width: '100px', height: '100px' }}
-                />
+        <footer className="flex__Column footer">
+            <div className="footer__logo">
+                <img src={logo} alt="Logo" />
             </div>
-            <div>© {currentYear} Kasa. All rights reserved.</div>
+            <div className="footer__credits">
+                © {currentYear} Kasa. All rights reserved.
+            </div>
         </footer>
     );
 }

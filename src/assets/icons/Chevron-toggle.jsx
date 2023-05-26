@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+
+// Importation du chevron de CollapseModule en svg (manipulation simplifiée et modulable)
 export const ChevronToggle = ({ className, state, onClick }) => {
     let icon;
     if (state === false) {
@@ -22,4 +25,10 @@ export const ChevronToggle = ({ className, state, onClick }) => {
             {icon}
         </svg>
     );
+};
+
+ChevronToggle.propTypes = {
+    className: PropTypes.string,
+    state: PropTypes.bool,
+    onClick: PropTypes.func,
 };
