@@ -19,6 +19,12 @@ html {
     }
 }
 
+@include mediaqueries-max($very-small) {
+    html {
+        font-size: 12px !important;
+    }
+}
+
 // Permet de donner l'apparence d'une div cliquable
 // A placer autour d'un lien 
 .clickable-div {

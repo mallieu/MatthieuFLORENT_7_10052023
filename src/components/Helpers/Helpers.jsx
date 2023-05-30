@@ -21,7 +21,7 @@ const MapList = ({
 
     return (
         <Container className={container_Class}>
-            {data.map((item) => {
+            {data.map((item, index) => {
                 const { id, cover } = item;
                 let key = id ? id : item;
 
@@ -40,7 +40,11 @@ const MapList = ({
                         key={key}
                         style={itemStyle}
                     >
-                        {isComponent ? <Component data={item} /> : item}
+                        {isComponent ? (
+                            <Component data={item} index={index} />
+                        ) : (
+                            item
+                        )}
                     </Item>
                 );
             })}

@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useAPICall from '../../assets/API/API';
 import { MapList } from '../../components/Helpers/Helpers';
 import CollapseModule from '../../components/CollapseModule/CollapseModule';
 import { RatingStar } from '../../assets/icons/Rating-star-icon';
-import Banner from '../../components/Banners/Banner';
+import Carrousel from '../../components/Carrousel/Carrousel';
 
 // Identifie l'appartement à afficher
 const FicheLogement = () => {
     const data = useAPICall('/data.json');
+    const navigate = useNavigate();
     const { appartmentId } = useParams();
     const thisAppartment = data.find(
         (appartment) => appartment.id === appartmentId
     );
-
+    // if (thisAppartment === undefined) {
+    //     navigate('/page404');
+    // }
     return (
         <div>
             {thisAppartment && (
@@ -32,7 +34,7 @@ const AppartmentDatas = ({
     location,
     description,
     equipments,
-    cover,
+    pictures,
     tags,
     rating,
     host,
@@ -50,10 +52,8 @@ const AppartmentDatas = ({
 
     return (
         <>
-            <Banner
-                className="banner--ficheLogement"
-                HasBackgroundImage={cover}
-            />
+            {/* Carrousel généré à partir des images disponibles */}
+            <Carrousel data={pictures} />
 
             <div className="infos__container">
                 <div className="flex__Column infosLogement">

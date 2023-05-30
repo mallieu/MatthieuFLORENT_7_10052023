@@ -1,0 +1,83 @@
+.carrousel {
+    &__container {
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+    }
+
+    &__picture {
+        height: 600px;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+        flex: 0 0 100%;
+    }
+}
+
+.carrousel-controllers {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    fill: white;
+    z-index: 1;
+
+    &__arrow {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &--left {
+            margin-left: $margin-l; // compense la taille de l'icône
+            height: 80px;
+            cursor: pointer;
+
+        }
+
+        &--right {
+            height: 80px;
+            cursor: pointer;
+
+        }
+    }
+
+    .carrousel-controllers__dots-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        cursor: pointer;
+
+    }
+
+    .carrousel-controllers__dot svg {
+        height: 30px;
+
+    }
+}
+
+.active {
+    animation-name: slidein;
+    opacity: 1;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
