@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CollapseModule> should render component 1`] = `
+<div
+  className="collapseModule__container"
+>
+  <div
+    className="collapseModule__titleBanner"
+  >
+    <h4 />
+  </div>
+  <div
+    className="collapseModule__content"
+  />
+</div>
+`;
+
+exports[`<CollapseModule> should render component with props 1`] = `
+<div
+  className="collapseModule__container"
+>
+  <div
+    className="collapseModule__titleBanner"
+  >
+    <h4>
+      Mon test
+    </h4>
+  </div>
+  <div
+    className="collapseModule__content"
+  >
+    Mon contenu de test
+  </div>
+</div>
+`;

@@ -11,7 +11,10 @@ const Carrousel = ({ data }) => {
     const showCarrouselControllers = data.length > 1;
 
     return (
-        <div className="carrousel__container">
+        <div
+            className="carrousel__container"
+            data-testid="carrousel-controllers"
+        >
             <MapList
                 data={data}
                 container_Class="carrousel__items"
@@ -55,6 +58,7 @@ const SlideCarrousel = ({
                 // Animation permettant de changer de slide
                 transform: `translateX(${currentSlide * -100}%)`, // 100% = slide width
             }}
+            data-testid="slide-carrousel"
         ></div>
     );
 };
@@ -65,7 +69,6 @@ const CarrouselControllers = ({ slides, currentSlide, setCurrentSlide }) => {
         setCurrentSlide(
             (currentSlide) => (currentSlide + slides.length - 1) % slides.length
         );
-        console.log(currentSlide);
     };
 
     const handleSlideRight = () => {
@@ -79,7 +82,10 @@ const CarrouselControllers = ({ slides, currentSlide, setCurrentSlide }) => {
 
     return (
         // Tous les icons sont définit en svg via CarrouselController
-        <div className="carrousel-controllers">
+        <div
+            className="carrousel-controllers"
+            data-testid="carrousel-controllers"
+        >
             <div className="carrousel-controllers__arrow">
                 <CarrouselControllersIcons
                     className="carrousel-controllers__arrow--left"

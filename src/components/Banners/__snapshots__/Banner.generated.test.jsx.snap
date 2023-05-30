@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner> Banner - should render component <Banner /> 1`] = `
+<div
+  style={null}
+/>
+`;
+
+exports[`<Banner> Banner - should render component with props 1`] = `
+<div
+  className="banner"
+  style={
+    Object {
+      "backgroundImage": "url(image.jpg)",
+    }
+  }
+>
+  <h1>
+    Je suis un test
+  </h1>
+</div>
+`;
