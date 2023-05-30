@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import PropTypes from 'prop-types';
-import MapList from './MapList';
+import { MapList } from './Helpers';
 
 describe('MapList', () => {
     const data = ['Item 1', 'Item 2', 'Item 3'];
 
-    it('MapList - renders a list of items', () => {
+    it("MapList - rend une liste d'éléments", () => {
         const { getAllByRole } = render(
             <MapList
                 data={data}
@@ -23,7 +24,7 @@ describe('MapList', () => {
         });
     });
 
-    it('MapList - renders div elements if isDiv prop is true', () => {
+    it('MapList - rend des éléments div si la prop isDiv est true', () => {
         const { getAllByRole } = render(
             <MapList
                 data={data}
@@ -42,29 +43,34 @@ describe('MapList', () => {
         });
     });
 
-    it('MapList - renders custom component if isComponent prop is true', () => {
-        const CustomComponent = ({ data }) => <span>{data.toUpperCase()}</span>;
-
-        CustomComponent.propTypes = {
-            data: PropTypes.string.isRequired,
+    it('MapList - rend un composant personnalisé si la prop isComponent est true', () => {
+        const TestComponent = ({ index }) => {
+            return (
+                <div data-testid="TestComponent">{`Component ${
+                    index + 1
+                }`}</div>
+            );
+        };
+        TestComponent.propTypes = {
+            index: PropTypes.number.isRequired,
         };
 
-        const { getAllByRole } = render(
+        const { getAllByTestId } = render(
             <MapList
                 data={data}
                 container_Class="container"
                 component_Class="item"
                 isComponent
-                component={CustomComponent}
+                component={({ index }) => <TestComponent index={index} />}
             />
         );
 
-        const spans = getAllByRole('listitem');
-        expect(spans).toHaveLength(data.length);
+        const customComponents = getAllByTestId('TestComponent');
+        expect(customComponents).toHaveLength(data.length);
 
-        spans.forEach((span, index) => {
-            expect(span.tagName.toLowerCase()).toBe('span');
-            expect(span).toHaveTextContent(data[index].toUpperCase());
+        customComponents.forEach((component, index) => {
+            expect(component.tagName.toLowerCase()).toBe('div');
+            expect(component).toHaveTextContent(`Component ${index + 1}`);
         });
     });
 });

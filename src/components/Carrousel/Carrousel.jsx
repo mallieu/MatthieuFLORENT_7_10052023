@@ -11,10 +11,7 @@ const Carrousel = ({ data }) => {
     const showCarrouselControllers = data.length > 1;
 
     return (
-        <div
-            className="carrousel__container"
-            data-testid="carrousel-controllers"
-        >
+        <div className="carrousel__container">
             <MapList
                 data={data}
                 container_Class="carrousel__items"
