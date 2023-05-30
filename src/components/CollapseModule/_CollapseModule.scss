@@ -21,9 +21,13 @@
     }
 
     &__toggle {
-        height: 20px;
+        height: map-get($taille-texte, m);
         fill: white;
         cursor: pointer;
+
+        @include mediaqueries-max ($tablet) {
+            height: map-get($taille-texte, s);
+        }
     }
 
     &__content {

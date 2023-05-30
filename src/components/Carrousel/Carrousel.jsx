@@ -72,10 +72,10 @@ const CarrouselControllers = ({ slides, currentSlide, setCurrentSlide }) => {
         setCurrentSlide((currentSlide) => (currentSlide + 1) % slides.length);
     };
 
-    // Valeur de l'index dynamique
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-    };
+    // // Valeur de l'index dynamique
+    // const handleDotClick = (index) => {
+    //     setCurrentSlide(index);
+    // };
 
     return (
         // Tous les icons sont définit en svg via CarrouselController
@@ -92,18 +92,23 @@ const CarrouselControllers = ({ slides, currentSlide, setCurrentSlide }) => {
                     onClick={handleSlideRight}
                 />
             </div>
-            <MapList
+            <div className="carrousel-controllers__counter">
+                {/* Le +1 compose le départ de 0 */}
+                {currentSlide + 1}/{slides.length}
+            </div>
+            {/* Affichage alternatif sous forme de points cliquables */}
+            {/* <MapList
                 data={slides}
                 container_Class="carrousel-controllers__dots-list"
                 isComponent={true}
-                component_Class="carrousel-controllers__dot"
+                component_Class="carrousel-controllers__dots-list--dot"
                 component={({ index }) => (
                     <CarrouselControllersIcons
                         icon="dots"
                         onClick={() => handleDotClick(index)}
                     />
                 )}
-            />
+            /> */}
         </div>
     );
 };

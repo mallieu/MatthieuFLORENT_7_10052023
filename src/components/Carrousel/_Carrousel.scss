@@ -2,15 +2,22 @@
     &__container {
         position: relative;
         overflow: hidden;
-        height: 600px;
+        height: 415px;
+        border-radius: $radius-l;
+
+        @include mediaqueries-max($tablet) {
+            height: 255px;
+        }
     }
 
     &__picture {
-        height: 600px;
+        height: 415px;
         width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: center / cover no-repeat;
+
+        @include mediaqueries-max($tablet) {
+            height: 255px;
+        }
     }
 
     &__items {
@@ -23,61 +30,66 @@
 }
 
 .carrousel-controllers {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
     fill: white;
-    z-index: 1;
+    height: 100%;
+    width: 100%;
 
     &__arrow {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
 
         &--left {
             margin-left: $margin-l; // compense la taille de l'icône
             height: 80px;
             cursor: pointer;
 
+            @include mediaqueries-max($tablet) {
+                margin-left: $margin-s;
+                height: 20px;
+            }
         }
 
         &--right {
             height: 80px;
             cursor: pointer;
 
+            @include mediaqueries-max($tablet) {
+                height: 20px;
+            }
         }
     }
 
-    .carrousel-controllers__dots-list {
-        list-style: none;
+    &__counter {
+        color: white;
         display: flex;
+        font-size: map-get($taille-texte, m);
         justify-content: center;
         width: 100%;
-        gap: 15px;
-        cursor: pointer;
-
-    }
-
-    .carrousel-controllers__dot svg {
-        height: 30px;
-
-    }
-}
-
-.active {
-    animation-name: slidein;
-    opacity: 1;
-}
-
-@keyframes slide-in {
-    0% {
-        opacity: 0;
+        position: absolute;
+        bottom: 7%;
+        left: 50%;
         transform: translateX(-50%);
+
+        @include mediaqueries-max($small) {
+            display: none;
+        }
     }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+    // Affichage alternatif
+    &__dots-list {
+        cursor: pointer;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        list-style: none;
+        width: 100%;
+
+        &--dot svg {
+            height: 10px;
+        }
     }
 }
