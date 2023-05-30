@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useAPICall from '../../assets/API/API';
 import { MapList } from '../../components/Helpers/Helpers';
 import CollapseModule from '../../components/CollapseModule/CollapseModule';
+import React from 'react';
 import { RatingStar } from '../../assets/icons/Rating-star-icon';
 import Carrousel from '../../components/Carrousel/Carrousel';
 
@@ -14,9 +15,13 @@ const FicheLogement = () => {
     const thisAppartment = data.find(
         (appartment) => appartment.id === appartmentId
     );
-    // if (thisAppartment === undefined) {
-    //     navigate('/page404');
-    // }
+    React.useEffect(() => {
+        if (data.length > 0 && thisAppartment === undefined) {
+            // Attend le chargement des données
+            navigate('/page404');
+        }
+    }, [data, thisAppartment, navigate]); // Si data et thisAppartment = indéfini, go navigate
+
     return (
         <div>
             {thisAppartment && (
@@ -28,7 +33,7 @@ const FicheLogement = () => {
     );
 };
 
-// Génère ses informations
+// Génère ses informations via desctructuration
 const AppartmentDatas = ({
     title,
     location,

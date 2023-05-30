@@ -16,8 +16,8 @@ const Carrousel = ({ data }) => {
                 data={data}
                 container_Class="carrousel__items"
                 component_Class="carrousel__item"
-                isDiv={true}
-                isComponent={true}
+                isDiv
+                isComponent
                 component={({ data, index }) => (
                     <SlideCarrousel
                         backgroundImage={data}

@@ -1,9 +1,10 @@
 .carrousel {
     &__container {
-        position: relative;
-        overflow: hidden;
-        height: 415px;
         border-radius: $radius-l;
+        height: 415px;
+        margin-top: $margin-l;
+        overflow: hidden;
+        position: relative;
 
         @include mediaqueries-max($tablet) {
             height: 255px;
@@ -11,9 +12,9 @@
     }
 
     &__picture {
+        background: center / cover no-repeat;
         height: 415px;
         width: 100%;
-        background: center / cover no-repeat;
 
         @include mediaqueries-max($tablet) {
             height: 255px;

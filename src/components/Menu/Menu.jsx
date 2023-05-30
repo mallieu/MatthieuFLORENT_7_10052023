@@ -1,36 +1,46 @@
+import React from 'react';
 import logo from '../../assets/images/logo.png';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { MapList } from '../Helpers/Helpers';
 
 const Menu = () => {
-    const location = useLocation();
+    const menuData = [
+        {
+            id: 1,
+            text: 'Accueil',
+            link: '/',
+        },
+        {
+            id: 2,
+            text: 'A propos',
+            link: '/a-propos',
+        },
+    ];
 
-    const activeLink = (linkUrl) => {
-        return location.pathname === linkUrl;
+    const MenuItem = ({ data }) => {
+        const { text, link } = data;
+
+        return (
+            <NavLink to={link} activeclassname="active-link">
+                {text}
+            </NavLink>
+        );
+    };
+
+    MenuItem.propTypes = {
+        data: PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            link: PropTypes.string.isRequired,
+        }).isRequired,
     };
 
     return (
         <nav className="header">
-            <a href="/">
+            <NavLink to="/" className="logo-link">
                 <img src={logo} alt="logo-kasa" />
-            </a>
-            <ul>
-                <li>
-                    <Link
-                        to="/"
-                        className={activeLink('/') ? 'active-link' : ''}
-                    >
-                        Accueil
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/a-propos"
-                        className={activeLink('/a-propos') ? 'active-link' : ''}
-                    >
-                        A propos
-                    </Link>
-                </li>
-            </ul>
+            </NavLink>
+            <MapList data={menuData} isComponent component={MenuItem} />
         </nav>
     );
 };

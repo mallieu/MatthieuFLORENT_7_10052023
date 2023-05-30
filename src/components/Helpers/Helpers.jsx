@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Nécessite data en array
 // Génération par défaut sous forme de liste
 // Peut produire des div ou des composants
-// /!\ Si isComponent = true, component est défini et isDiv = true
+// /!\ Si isComponent = true, component est défini
 // Ex : CollapseModule
 
 const MapList = ({
@@ -16,7 +16,7 @@ const MapList = ({
     isComponent = false,
     component: Component, // Destructuration + renommage du composant
 }) => {
-    const Container = isComponent ? 'div' : 'ul';
+    const Container = isDiv ? 'div' : 'ul';
     const Item = isDiv ? 'div' : 'li';
 
     return (

@@ -29,7 +29,7 @@
             font-size: map-get($taille-texte, l);
             text-decoration: none;
 
-            &.active-link {
+            &.active {
                 text-decoration: underline;
             }
         }
