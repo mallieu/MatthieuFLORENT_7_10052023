@@ -22,9 +22,12 @@ const Menu = () => {
         const { text, link } = data;
 
         return (
-            <NavLink to={link} activeclassname="active-link">
-                {text}
-            </NavLink>
+            <>
+                {/*Usage de NavLink pour activeclass*/}
+                <NavLink to={link} activeclassname="active-link">
+                    {text}
+                </NavLink>
+            </>
         );
     };
 

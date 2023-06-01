@@ -6,6 +6,10 @@ body {
     font-weight: map-get($graisse-texte, normal);
     margin: auto; // Centre le contenu
     width: 90%; // Réduit la taille du body
+
+    @include mediaqueries-max($tablet) {
+        width: 95%;
+    }
 }
 
 /* Gestion typo rem */

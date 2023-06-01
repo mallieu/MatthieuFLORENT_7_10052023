@@ -12,8 +12,9 @@ import './utils/style/app.scss';
 
 function App() {
     return (
-        <React.StrictMode>
-            <Router>
+        <Router>
+            {/*Vérifie le rendu des composants dépendants des routes */}
+            <React.StrictMode>
                 <Menu />
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -25,8 +26,8 @@ function App() {
                     <Route path="*" element={<Page404 />} />
                 </Routes>
                 <Footer />
-            </Router>
-        </React.StrictMode>
+            </React.StrictMode>
+        </Router>
     );
 }
 
